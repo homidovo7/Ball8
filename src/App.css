@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f3f6f4;
+  color: #1b2922;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: min(100% - 32px, 420px);
+  margin: 38px auto;
+  padding: 32px 28px 24px;
+  border: 1px solid #e2e9e4;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 14px 40px #173b2812;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  color: #183d2c;
+  font-size: 34px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 10px 0 28px;
+  color: #68766d;
+  font-size: 16px;
+}
+
+.ball {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 28px;
+  border: 5px solid #252a27;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 27%, #333a36, #111613 65%);
+  box-shadow: inset -9px -12px 17px #0008, 0 12px 22px #0003;
+}
+
+.eight {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.triangle {
+  position: absolute;
+  top: 92px;
+  left: 50%;
+  width: 132px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 6px 5px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: linear-gradient(145deg, #4a9cf5, #1762c2);
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 0 1px 3px #123866;
+}
+
+.triangle span {
+  display: block;
+  width: 100%;
+  max-width: 104px;
+  font-size: 12px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  padding: 13px;
+  border: 0;
+  border-radius: 6px;
+  background: #26734c;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+button:hover:not(:disabled) {
+  background: #1c5d3c;
+  transform: translateY(-1px);
+}
+
+.message {
+  min-height: 18px;
+  margin: 0;
+  color: #b00020;
+  font-size: 14px;
+}
+
+.triangle span:not(:empty) {
+  animation: show-answer .25s ease-out;
+}
+
+@keyframes show-answer {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 380px) {
+  .app { margin: 18px auto; padding: 28px 20px 20px; }
+  h1 { font-size: 30px; }
+  .ball { width: 230px; height: 230px; }
+  .triangle { top: 82px; width: 120px; height: 110px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shaking { animation: none; }
+}
